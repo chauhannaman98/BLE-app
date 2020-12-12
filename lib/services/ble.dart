@@ -8,7 +8,7 @@ class BLE {
     flutterBlue.startScan(timeout: Duration(seconds: 4));
 
     // Listen to scan results
-    flutterBlue.scanResults.listen((results) {
+    var subscription = flutterBlue.scanResults.listen((results) {
       for (ScanResult r in results) {
         print('${r.device.name} found | RSSI: ${r.rssi}');
       }
